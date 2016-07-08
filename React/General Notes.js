@@ -41,4 +41,8 @@ numbers.reduce(function(prev, current){
 
 * Allows you to easily manage different modules and keep track of which version you installed
 
-
+4. Pure Functions
+- Evaluates the same result given the same args
+- Does not depend on and modify the states of variables out of its scope
+- No side effects (mutation, async reqs)
+- eg. slice is pure fuction while splice is not
