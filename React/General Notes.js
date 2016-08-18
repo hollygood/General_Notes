@@ -46,3 +46,5 @@ numbers.reduce(function(prev, current){
 - Does not depend on and modify the states of variables out of its scope
 - No side effects (mutation, async reqs)
 - eg. slice is pure fuction while splice is not
+
+5. React's JSX uses the upper vs. lower case convention to distinguish between local component classes and HTML tags.
