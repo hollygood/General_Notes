@@ -48,3 +48,20 @@ numbers.reduce(function(prev, current){
 - eg. slice is pure fuction while splice is not
 
 5. React's JSX uses the upper vs. lower case convention to distinguish between local component classes and HTML tags.
+
+6. React's Life Cycle Methods categories.
+
+1) When a component gets mounted to the DOM and unmounted.
+2) When a component receives new data.
+
+7. Mounting / Unmounting:
+
+- Establish some default props in component
+- Set some initial state in component
+- Make an Ajax request to fetch some data needed for this component
+- Set up any listeners (ie Websockets or Firebase listeners)
+- Remove any listeners you initially set up (when unmounted)
+
+8. You should usually use componentDidMount over componentWillMount.
+- If you want to integrate with other JavaScript frameworks, set timers using setTimeout or setInterval,
+	or send AJAX requests, perform those operations in componentDidMount method.
