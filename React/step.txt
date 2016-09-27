@@ -25,9 +25,15 @@
 
 npm install --save react-router@2.0.0-rc5
 
-next one:
-
-Stateless Functional Components
-
 8. Useful links:
 * https://babeljs.io/repl/
+
+9. use transition:
+
+npm install --save react-addons-css-transition-group (animate btw routes)
+
+npm install --save-dev css-loader style-loader (dynamic loads css for specific components)
+
+10. require css in react:
+webpack config
+{test: /\.css$/, loader: 'style-loader!css-loader'}
