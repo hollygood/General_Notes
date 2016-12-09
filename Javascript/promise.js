@@ -1,10 +1,3 @@
-//Promise
-
-//A promise represents the eventual result of an asynchronous operation.
-//Every async function you write will return a promise, and
-//every thing you await will ordinarily be a promise.
-
-
 /*
 * Promisey pyramid of doom
 */
@@ -40,6 +33,9 @@ remotedb.allDocs(...).then(function (resultOfAllDocs) {
 
 /*
  * forEach() with Promise
+ * Promise.all will take an array of promises, and compose them all into a single promise,
+ * which resolves only when every child promise in the array has resolved itself
+ * let [foo, bar] = await Promise.all([getFoo(), getBar()]);
  */
 
 //Bad:db.remove() to be called on all the documents.
