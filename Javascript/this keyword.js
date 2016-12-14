@@ -87,3 +87,36 @@ var me = {
 sayAge(); //undefined, call window object
 window.age = 35;
 sayAge(); //35
+
+
+/*
+* ECMAScript 5
+* */
+
+//variant 1
+var self = this;
+this.nums.forEach(function(v){
+   if ( v % 5 === 0)
+       self.fives.push(v);
+});
+
+//variant 2
+this.nums.forEach(function(v){
+    if ( v % 5 === 0)
+        this.fives.push(v);
+}, this);
+
+//variant 3
+this.nums.forEach(function(v){
+    if ( v % 5 === 0)
+        this.fives.push(v);
+}.bind(this));
+
+/*
+ * ECMAScript 6
+ * */
+
+this.nums.forEach((v) => {
+    if ( v % 5 === 0)
+        this.fives.push(v);
+});
