@@ -120,3 +120,25 @@ this.nums.forEach((v) => {
     if ( v % 5 === 0)
         this.fives.push(v);
 });
+
+/*
+* Complex this function
+* Answer: 3, 1
+* */
+
+var x = 3;
+
+var foo = {
+    x: 2,
+    baz: {
+        x: 1,
+        bar: function() {
+            return this.x;
+        }
+    }
+}
+
+var go = foo.baz.bar;
+
+alert(go());
+alert(foo.baz.bar());
