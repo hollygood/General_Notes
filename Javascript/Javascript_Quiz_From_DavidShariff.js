@@ -121,10 +121,11 @@ var color1 = new String("green");
 
 var color2 = "coral";
 // generates an error (color2 is not a String object)
-"length" in color2
+"length" in color2;
 
 /*
-* The > operator has a higher precedence than === and is left-to-right associative. If we add the implicit parentheses we get this:
+* The > operator has a higher precedence than === and is left-to-right associative.
+* If we add the implicit parentheses we get this:
 * */
 
 ((10 > 9) > 8) === true;
