@@ -1,0 +1,13 @@
+Difference between npm and bower:
+
+1. Dependency: 
+
+npm does nested dependency tree (size heavy) while Bower requires a flat dependency tree.
+
+2. Modules vs globals:
+
+Bower is about loading plain-old script files, it includes all your scripts in plain-old <script> in the <head> 
+of your HTML.
+
+npm uses CommonJS modules and explicit dependency injection. Anything inside a module is effectively namespaced,
+it's not a global variable anymore.
