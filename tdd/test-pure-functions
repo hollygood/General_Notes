@@ -50,3 +50,56 @@ const incrememtCounter = (list, index) => {
     ...list.slice(index + 1)
   ];
 }
+
+/**
+* this function mutates the todo object, which is not pure function
+*/
+const toggleTodo = (todo) => {
+  todo.completed != todo.completed;
+  
+  return todo;
+}
+
+/**
+* method 1: create a new object with the copy of the original object
+* but we may forget to update this code if there are new properties in todo object
+*/
+const toggleTodo1 = (todo) => {
+ return {
+   id: todo.id,
+   text: todo.text,
+   completed: ! todo.completed
+ }
+}
+
+
+/**
+* method 2, use ES 6 Object.assign
+*/
+const toggleTodo2 = (todo) => {
+ return Object.assign({}, todo, {
+   completed: ! todo.completed
+ })
+}
+
+const testToggleTodo = () => {
+  const todoBefore = {
+    id: 0,
+    text: 'Hello Redux',
+    completed: true
+  };
+  
+  const todoAfter = {
+    id: 0,
+    text: 'Hello Redux',
+    completed: false
+  };
+  
+  deepFreeze(todoBefore);
+  
+  expect(toggleTodo(todoBefore)).toEqual(todoAfter);
+}
+
+
+
+
