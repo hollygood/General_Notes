@@ -1,0 +1,52 @@
+/**
+ * Add, Remove Counter pure functions with test
+ * freeze(), deepFreeze() function freeze an object. An frozen object can't be changed and mutate. As pure function requires
+ * not mutating data, using freeze() in the test to make sure the object it's not mutable.
+*/
+
+/** 
+ * Normal way to add a number to an array, we use .push(), but this method modifies the original array
+ * use cancat() or ...
+*/
+const addCounter = (list) => {
+  return [...list, 0];
+}
+
+const testAddCounter = () => {
+  const listBefore = [];
+  const listAfter = [0];
+  
+  deepFreeze(listBefore); 
+  
+  expect(addCounter(listBefore)).toEqual(listAfter);
+}
+
+/**
+* don't use splice() method as it changes the array / object
+*/
+const removeCounter = (list, index) => {
+  return [
+    ...list.slice(0, index),
+    ...list.slice(index + 1)
+  ];
+}
+
+const testRemoveCounter = () => {
+  const listBefore = [0, 10, 20];
+  const listAfter = [10, 20];
+  
+  deepFreeze(listBefore);
+  
+  expect(removeCounter(listBefore, 1)).toEqual(listAfter);
+}
+
+/**
+* list[index]++ is a mutation
+*/
+const incrememtCounter = (list, index) => {
+  return [
+    ...list.slice(0, index),
+    ...list[index] + 1,
+    ...list.slice(index + 1)
+  ];
+}
