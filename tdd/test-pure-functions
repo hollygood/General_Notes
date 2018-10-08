@@ -78,8 +78,18 @@ const toggleTodo1 = (todo) => {
 */
 const toggleTodo2 = (todo) => {
  return Object.assign({}, todo, {
-   completed: ! todo.completed
+   completed: !todo.completed
  })
+}
+
+/**
+* method 3, use spread operator
+*/
+const toggleTodo3 = (todo) => {
+  return {
+    ...todo,
+    completed: !todo.completed
+  }
 }
 
 const testToggleTodo = () => {
